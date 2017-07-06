@@ -41,7 +41,7 @@ RUN ln -s $TOOL_CHAIN_BIN/arm-linux-androideabi-nm  $TOOL_CHAIN_BIN/arm-linux-ea
 
 COPY make-glib.sh $WORKPATH/make-glib.sh
 RUN chmod +x $WORKPATH/make-glib.sh
-
+RUN $WORKPATH/make-glib.sh
 
 VOLUME ["/home/data"]
 
