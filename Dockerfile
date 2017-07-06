@@ -43,6 +43,26 @@ COPY make-glib.sh $WORKPATH/make-glib.sh
 RUN chmod +x $WORKPATH/make-glib.sh
 RUN $WORKPATH/make-glib.sh
 
+RUN wget -P $WORKPATH/ http://www.digip.org/jansson/releases/jansson-2.10.tar.gz
+RUN wget -P $WORKPATH/ ftp://ftp.gnu.org/gnu/gengetopt/gengetopt-2.22.6.tar.gz
+RUN wget -O $WORKPATH/libsrtp-2.0.0.tar.gz  https://github.com/cisco/libsrtp/archive/v2.0.0.tar.gz
+RUN wget -P $WORKPATH/ https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz
+RUN wget -P $WORKPATH/ https://ftp.gnu.org/gnu/nettle/nettle-3.1.tar.gz
+RUN wget -P $WORKPATH/ https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/gnutls-3.5.13.tar.xz
+RUN wget -P $WORKPATH/ https://nice.freedesktop.org/releases/libnice-0.1.14.tar.gz
+RUN wget -P $WORKPATH/ https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.54.tar.gz
+
+RUN wget -P $WORKPATH/ https://www.openssl.org/source/openssl-1.0.1g.tar.gz
+COPY Setenv-android.sh $WORKPATH/Setenv-android.sh
+RUN chmod +x $WORKPATH/Setenv-android.sh
+
+RUN apt-get install -y texinfo
+
+COPY gnutls.config.h $WORKPATH/gnutls.config.h
+COPY make-other-lib.sh $WORKPATH/make-other-lib.sh
+RUN chmod +x $WORKPATH/make-other-lib.sh
+RUN $WORKPATH/make-other-lib.sh
+
 VOLUME ["/home/data"]
 
 CMD ["bash"]
