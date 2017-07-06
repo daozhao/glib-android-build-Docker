@@ -39,6 +39,10 @@ RUN ln -s $TOOL_CHAIN_BIN/arm-linux-androideabi-gcc $TOOL_CHAIN_BIN/arm-linux-ea
 RUN ln -s $TOOL_CHAIN_BIN/arm-linux-androideabi-ld  $TOOL_CHAIN_BIN/arm-linux-eabi-ld
 RUN ln -s $TOOL_CHAIN_BIN/arm-linux-androideabi-nm  $TOOL_CHAIN_BIN/arm-linux-eabi-nm
 
+COPY make-glib.sh $WORKPATH/make-glib.sh
+RUN chmod +x $WORKPATH/make-glib.sh
+
+
 VOLUME ["/home/data"]
 
 CMD ["bash"]
