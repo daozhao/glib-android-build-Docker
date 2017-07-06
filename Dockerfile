@@ -22,7 +22,7 @@ COPY glib-android.cache $WORKPATH/glib-android.cache
 COPY glib-fix-gthreadedresolver.c $WORKPATH/glib-fix-gthreadedresolver.c
 
 RUN wget https://dl.google.com/android/repository/android-ndk-r13b-linux-x86_64.zip
-unzip -o  android-ndk-r13b-linux-x86_64.zip
+RUN unzip -o  android-ndk-r13b-linux-x86_64.zip
 
 ENV NDK=$WORKPATH/android-ndk-r13b
 
