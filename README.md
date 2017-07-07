@@ -1,14 +1,14 @@
 # glib-android-build-docker
-build glib for android
+build glib for android 
 
-# build depend lib list:
+# Build depend lib list:
 1) iconv (1.14) https://www.gnu.org/software/libiconv/
 2) gettext (0.19.8) https://www.gnu.org/software/gettext/
 3) pcre (8.40) http://www.pcre.org/
 4) libffi (3.2.1) https://sourceware.org/libffi/
 5) glib (2.44.1) https://developer.gnome.org/glib/stable/
 
-# build other lib list:
+# Build other lib list:
 6) jansson (2.10) http://www.digip.org/jansson/
 7) gengetopt (2.22.6) https://www.gnu.org/software/gengetopt/gengetopt.html
 8) libsrtp (2.0.0) https://github.com/cisco/libsrtp
@@ -22,7 +22,7 @@ build glib for android
 ```
 docker run -it daozhao/glib-android-build-docker bash
 ```
-# other information
+# Other information
 NDK=/home/data/android-ndk-r13b  
 SYSROOT=/home/data/standalone_toolchain/sysroot  
 .a & .so file in /home/data/standalone_toolchain/sysroot/usr/lib/  
