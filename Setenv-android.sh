@@ -209,7 +209,7 @@ fi
 # For the Android toolchain
 # https://android.googlesource.com/platform/ndk/+/ics-mr0/docs/STANDALONE-TOOLCHAIN.html
 export ANDROID_SYSROOT="$ANDROID_NDK_ROOT/platforms/$_ANDROID_API/$_ANDROID_ARCH"
-export SYSROOT="$ANDROID_SYSROOT"
+#export SYSROOT="$ANDROID_SYSROOT"
 export NDK_SYSROOT="$ANDROID_SYSROOT"
 export ANDROID_NDK_SYSROOT="$ANDROID_SYSROOT"
 export ANDROID_API="$_ANDROID_API"

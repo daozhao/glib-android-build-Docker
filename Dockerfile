@@ -54,11 +54,11 @@ RUN wget -P $WORKPATH/ https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.5
 
 RUN wget -P $WORKPATH/ https://www.openssl.org/source/openssl-1.0.1g.tar.gz
 COPY Setenv-android.sh $WORKPATH/Setenv-android.sh
+#modify by https://wiki.openssl.org/images/7/70/Setenv-android.sh 
 RUN chmod +x $WORKPATH/Setenv-android.sh
 
 RUN apt-get install -y texinfo
 
-COPY gnutls.config.h $WORKPATH/gnutls.config.h
 COPY make-other-lib.sh $WORKPATH/make-other-lib.sh
 RUN chmod +x $WORKPATH/make-other-lib.sh
 RUN $WORKPATH/make-other-lib.sh
